@@ -107,3 +107,5 @@ const submitQuiz = async (req, res) => {
     });
   }
 };
+
+export { getQuizById, submitQuiz };

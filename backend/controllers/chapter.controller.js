@@ -25,3 +25,5 @@ const getChapterById = async (req,res) => {
         });
     }
 }
+
+export { getChapterById };
