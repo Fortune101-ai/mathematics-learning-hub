@@ -1,5 +1,4 @@
 import Topic from '../models/topic.model.js';
-
 const getAllTopics = async (req, res) => {
     try {
         const topics = await Topic.find().populate('chapters').sort('order');

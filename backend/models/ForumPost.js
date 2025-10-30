@@ -70,4 +70,5 @@ const forumPostSchema = new mongoose.Schema({
 
 const ForumPost = mongoose.model('ForumPost', forumPostSchema);
 
+export default ForumPost;
 

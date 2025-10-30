@@ -6,6 +6,8 @@ import authRoutes from './routes/auth.route.js'
 import topicRoutes from './routes/topic.route.js'
 import chapterRoutes from './routes/chapter.route.js'
 import quizRoutes from './routes/quizzes.route.js'
+import forumPostRoutes from './routes/forum.route.js'
+import logger from './config/logger.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -19,13 +21,14 @@ app.use('/api/auth', authRoutes)
 app.use('/api/topics', topicRoutes)
 app.use('/api/chapters', chapterRoutes)
 app.use('/api/quizzes', quizRoutes)
+app.use('/api/forum', forumPostRoutes)
 
 app.get('/api/health', (req, res) => {
  res.json({ status: 'OK', message: 'Server is running' })
 })
 
 app.use((err, req, res, next) => {
-  console.error(err.stack)
+  logger.error(err.stack)
   res.status(err.status || 500).json({
     success: false,
     message: err.message || "Internal Server Error",
@@ -33,6 +36,6 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
+  logger.info(`Server is running on port ${PORT}`)
 })
 
