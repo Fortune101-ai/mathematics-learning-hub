@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-import authReducer from "./slices/authSlice"
-import topicsReducer from "./slices/topicsSlice"
-import progressReducer from "./slices/progressSlice"
-import tutorsReducer from "./slices/tutorsSlice"
-import forumReducer from "./slices/forumSlice"
+import authReducer from "./slices/auth.slice.js"
+import topicsReducer from "./slices/topic.slice.js"
+import progressReducer from "./slices/progress.slice.js"
+import tutorsReducer from "./slices/tutors.slice.js"
+import forumReducer from "./slices/forum.slice.js"
 
 export const store = configureStore({
   reducer: {
