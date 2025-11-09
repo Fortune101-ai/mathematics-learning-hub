@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LoginPage from "./pages/Login_Page.jsx";
 import LearnerDashboard from "./pages/Learner_Dashboard.jsx";
+import TutorDashboard from "./pages/Tutor_Dashboard.jsx";
 
 function App() {
   const { user, isAuthenticated } = useSelector((state) => state.auth);
@@ -14,6 +15,26 @@ function App() {
         element={
           isAuthenticated && user?.role === "learner" ? (
             <LearnerDashboard />
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+
+      <Route
+        path="/tutor/*"
+        element={isAuthenticated && user?.role === "tutor" ? <TutorDashboard /> : <Navigate to="/login" replace />}
+      />
+
+      <Route
+        path="/"
+        element={
+          isAuthenticated ? (
+            user?.role === "tutor" ? (
+              <Navigate to="/tutor" replace />
+            ) : (
+              <Navigate to="/learner" replace />
+            )
           ) : (
             <Navigate to="/login" replace />
           )

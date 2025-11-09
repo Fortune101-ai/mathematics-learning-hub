@@ -8,6 +8,7 @@ import {
   registerUser,
   clearError,
 } from "../store/slices/auth.slice.js";
+import "../styles/Login_Page.css";
 
 function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
