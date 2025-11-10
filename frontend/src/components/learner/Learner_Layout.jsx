@@ -26,7 +26,6 @@ function LearnerLayout({ children }) {
         <div className="header-container">
           <div className="header-brand">
             <h1 className="app-title">MathLearn</h1>
-            <span className="app-subtitle">Grade 12</span>
           </div>
 
           <nav className="header-nav">
