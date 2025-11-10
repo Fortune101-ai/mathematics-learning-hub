@@ -13,6 +13,7 @@ import "../styles/Login_Page.css";
 function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
+    name: "",
     username: "",
     email: "",
     password: "",
