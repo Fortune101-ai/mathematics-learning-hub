@@ -1,4 +1,3 @@
-"use client"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { logout } from "../../store/slices/auth.slice.js"

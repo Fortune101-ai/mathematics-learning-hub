@@ -1,5 +1,3 @@
-"use client"
-
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import "../../styles/Topic_Overview.css"

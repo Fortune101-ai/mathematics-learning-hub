@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import LearnerLayout from "../components/learner/Learner_Layout"
 import "../styles/Forum_Page.css"
